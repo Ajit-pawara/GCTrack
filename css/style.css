@@ -1,0 +1,378 @@
+/* Game List */
+#gameList {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.game-item {
+
+background: rgba(0, 0, 0, 0.6); /* Light dark black with reduced opacity */
+
+    border-radius: 15px;
+    margin: 10px 0;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between; /* Align game info and button to opposite sides */
+    align-items: center; /* Vertically center align the items */
+    gap: 10px; /* Space between game info and button */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Darker, more intense shadow */
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.game-item:hover {
+    transform: scale(1.05); /* Slightly bigger on hover */
+    background: rgba(255, 255, 255, 0.15); /* Darker hover background */
+}
+
+/* Game Info */
+.game-info {
+    font-size: 18px;
+    color: #ff9800; /* Warm golden color for the game name */
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4); /* Adding slight glow to text */
+}
+
+/* Remove Button */
+.remove-game {
+    background: #e74c3c; /* Red background for remove button */
+    color: white;
+    padding: 5px 10px; /* Smaller padding for the button */
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 14px; /* Smaller font size */
+    width: auto; /* Button width adjusts to content */
+    height: 30px; /* Define height to make it more compact */
+}
+
+.remove-game:hover {
+    background: #c0392b; /* Darker red on hover */
+    transform: scale(1.1);
+}
+
+/* Add an animation for fade-in */
+.game-item.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Additional Styles for Game List and Button */
+.game-item {
+    transition: background-color 0.3s ease-in-out;
+}
+
+.game-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly darker hover effect */
+}
+
+.remove-game {
+    font-size: 14px;
+    padding: 5px 12px;
+    background: #ff4d6d; /* A softer red color */
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for button */
+}
+
+.remove-game:hover {
+    background: #e74c3c; /* A deeper red on hover */
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+
+/* General Styles for Student List */
+#studentList {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.student-item {
+   background: rgba(0, 0, 0, 0.85); /* Dark black with high opacity */
+
+    border-radius: 15px;
+    margin: 10px 0;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items in a row */
+    gap: 10px; /* Space between student info and button */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Darker shadow for a more intense 3D effect */
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.student-item:hover {
+    transform: scale(1.05); /* Slightly bigger on hover */
+    background: rgba(255, 255, 255, 0.18); /* Darker hover background */
+}
+
+/* Styling for Student Info */
+.student-info {
+    font-size: 18px;
+    color: #ff9800; /* Warm golden color for the name */
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Slight glow effect */
+}
+
+/* Remove Button */
+.remove-student {
+    background: #e74c3c; /* Red background for remove button */
+    color: white;
+    padding: 5px 12px; /* Smaller button padding */
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-size: 14px;
+    width: auto;
+    height: 30px;
+}
+
+.remove-student:hover {
+    background: #c0392b; /* Darker red on hover */
+    transform: scale(1.1);
+}
+
+/* Animation Effect for Student Item */
+.student-item.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Extra Styling for Hover Effect */
+.student-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Darker background on hover */
+}
+
+/* Add border for better definition */
+.student-item {
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Green +1 button */
+.update-btn:nth-child(1) {
+    background: #28a745;
+    color: white;
+}
+
+.update-btn:nth-child(1):hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+
+/* Red -1 button */
+.update-btn:nth-child(2) {
+    background: #dc3545;
+    color: white;
+}
+
+.update-btn:nth-child(2):hover {
+    background: #c82333;
+    transform: scale(1.05);
+}
+
+/* Fade-in and Fade-out animation */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+/* Make the content scrollable if necessary */
+#scoreTableBody {
+    max-height: 400px; /* Limit height for the table */
+    overflow-y: auto; /* Enable vertical scrolling */
+    width: 100%;
+}
+
+
+
+
+
+
+/* Scoreboard container for styling and spacing */
+.scoreboard-container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    background: #000 !important; /* Solid black background */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8) !important; /* Deep shadow for floating effect */
+    backdrop-filter: none; /* Remove blur effect */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff; /* Ensure text is white on dark background */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect to enhance floating feel */
+.scoreboard-container:hover {
+    transform: translateY(-10px); /* Lift the container */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.9) !important; /* More intense shadow */
+}
+
+/* Darker background for the scoreboard itself */
+.scoreboard {
+    background: rgba(0, 0, 0, 0.85); /* Darker black background */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Scoreboard Table Styling */
+#scoreTableBody tr {
+    background: rgba(0, 0, 0, 0.75); /* Darker background for rows */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Light border */
+    transition: all 0.3s ease;
+}
+
+#scoreTableBody tr:hover {
+    background: rgba(0, 0, 0, 0.85); /* Darker background on hover */
+}
+
+/* Table cell styling */
+td {
+    padding: 12px;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Branch and Score Styling */
+td:first-child {
+    color: #ff9800; /* Orange color for branches */
+    font-weight: bold;
+}
+
+td:nth-child(2) {
+    color: #fff; /* White color for scores */
+}
+
+/* Action buttons (update score buttons) */
+.update-btn {
+    padding: 8px 15px;
+    margin: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Green +1 button */
+.update-btn:nth-child(1) {
+    background: #28a745;
+    color: white;
+}
+
+.update-btn:nth-child(1):hover {
+    background: #218838;
+    transform: scale(1.1);
+}
+
+/* Red -1 button */
+.update-btn:nth-child(2) {
+    background: #dc3545;
+    color: white;
+}
+
+.update-btn:nth-child(2):hover {
+    background: #c82333;
+    transform: scale(1.1);
+}
+
+/* Fade-in and Fade-out animation */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+

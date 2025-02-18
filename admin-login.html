@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - GC Competition</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .admin-login-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 50px;
+            border-radius: 15px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: slideIn 1.2s ease-in-out;
+        }
+        .admin-title {
+            font-size: 2em;
+            color: white;
+            margin-bottom: 20px;
+        }
+        .login-box {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .input-field {
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            font-size: 1em;
+            transition: all 0.3s ease-in-out;
+        }
+        .input-field:focus {
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 75, 43, 0.8);
+        }
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            display: none;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes fadeOut {
+            to { opacity: 0; transform: scale(0.8); }
+        }
+        @keyframes shake {
+            0% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-login-container">
+        <h2 class="admin-title">🥷 Admin Login 🥇</h2>
+        <div class="login-box">
+            <input type="text" id="adminUsername" placeholder="Username" class="input-field">
+            <input type="password" id="adminPassword" placeholder="Password" class="input-field">
+            <button onclick="validateAdmin()" class="btn">Login</button>
+            <p id="errorMessage" class="error-message">Incorrect Username or Password!</p>
+        </div>
+    </div>
+    <script>
+        function validateAdmin() {
+            let username = document.getElementById("adminUsername").value;
+            let password = document.getElementById("adminPassword").value;
+            let errorMessage = document.getElementById("errorMessage");
+            
+            if (username === "ignite" && password === "ignite") {
+                document.body.style.animation = "fadeOut 1s forwards";
+                setTimeout(() => {
+                    window.location.href = 'admin.html';
+                }, 1000);
+            } else {
+                errorMessage.style.display = "block";
+                errorMessage.style.animation = "shake 0.3s ease-in-out";
+            }
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - GC Competition</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+       <button onclick="window.location.href='student.html'" class="btn">Login as Student</button>
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+        .dashboard-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        .glass-box {
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .glass-box:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .btn {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background: #ff4d6d;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: #ff1e4d;
+            transform: scale(1.1);
+        }
+        .score-table {
+            width: 100%;
+            margin-top: 10px;
+            border-collapse: collapse;
+        }
+        .score-table th, .score-table td {
+            padding: 10px;
+            border: 1px solid #fff;
+        }
+        .score-table th {
+            background: #ff4d6d;
+        }
+        .score-table td {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .input-field {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 80%;
+            margin: 10px 0;
+        }
+        .animated-button {
+            background: #1e90ff;
+        }
+        .animated-button:hover {
+            background: #0073e6;
+        }
+    </style> 
+  
+</head>
+<body onload="loadScores(); loadStudents();">
+    <div class="dashboard-container animated fadeIn centered">
+        <h1 class="dashboard-title glass-effect">🏆 GCEK 🏆</h1>
+        
+        <div class="score-management glass-box">
+    <h2>GC Scores</h2>
+    <table class="score-table">
+        <thead>
+            <tr>
+                <th>Branch</th>
+                <th>Score</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="scoreTableBody">
+            <tr>
+                <td>IT</td>
+                <td id="itScore">0</td>
+                <td>
+                    <button class="btn update-btn" onclick="updateScore('IT', 1)">+1</button>
+                    <button class="btn update-btn" onclick="updateScore('IT', -1)">-1</button>
+                </td>
+            </tr>
+            <tr>
+                <td>ENTC</td>
+                <td id="entcScore">0</td>
+                <td>
+                    <button class="btn update-btn" onclick="updateScore('ENTC', 1)">+1</button>
+                    <button class="btn update-btn" onclick="updateScore('ENTC', -1)">-1</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Civil</td>
+                <td id="civilScore">0</td>
+                <td>
+                    <button class="btn update-btn" onclick="updateScore('Civil', 1)">+1</button>
+                    <button class="btn update-btn" onclick="updateScore('Civil', -1)">-1</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Mechanical</td>
+                <td id="mechScore">0</td>
+                <td>
+                    <button class="btn update-btn" onclick="updateScore('Mechanical', 1)">+1</button>
+                    <button class="btn update-btn" onclick="updateScore('Mechanical', -1)">-1</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Electrical</td>
+                <td id="elecScore">0</td>
+                <td>
+                    <button class="btn update-btn" onclick="updateScore('Electrical', 1)">+1</button>
+                    <button class="btn update-btn" onclick="updateScore('Electrical', -1)">-1</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+        <div class="game-management glass-box">
+            <h2>🧩⛹️ Games 🏊🎖️</h2>
+            <input type="text" id="gameName" placeholder="Enter Game Name" class="input-field">
+            <button class="btn animated-button" onclick="addGame()">Add Game</button>
+            <ul id="gameList" class="game-list"></ul>
+        </div>
+
+        <div class="student-management glass-box">
+            <h2>Registered Students 🏂</h2>
+            <ul id="studentList" class="student-list"></ul>
+        </div>
+ 
+
+    
+    <script src="js/admin.js"></script>
+        <script>
+        // ✅ Sync updates in real-time across admin and student dashboards
+        window.addEventListener("storage", function (event) {
+            if (event.key === "gcUpdate") {
+                console.log("📢 GC Scores updated, reloading admin scores...");
+                loadScores();
+            }
+            if (event.key === "studentUpdate") {
+                console.log("📢 A student registered/removed, updating list...");
+                loadStudents();
+            }
+        });
+        
+        
+        
+        
+        
+        
+         
+        
+
+</body>
+</html>
+
+
+
+

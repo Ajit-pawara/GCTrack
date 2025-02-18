@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #fff;
+        }
+
+        th {
+            background: #ff4d6d;
+        }
+
+        td {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        input, select, button {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        input, select {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-align: center;
+        }
+
+        button {
+            background: #1e90ff;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #0073e6;
+            transform: scale(1.05);
+        }
+
+        .fade-out {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="title">🏆 GC Scoreboard 🎯</h1>
+   <table>
+    <thead>
+        <tr>
+            <th>Branch</th>
+            <th>GC Points</th>
+        </tr>
+    </thead>
+    <tbody id="scoreTable">
+        <tr><td>🖥️ IT</td><td id="itScore">0</td></tr>
+        <tr><td>📡 ENTC</td><td id="entcScore">0</td></tr>
+        <tr><td>🏗️ CIVIL</td><td id="civilScore">0</td></tr>
+        <tr><td>🔧 MECHANICAL</td><td id="mechScore">0</td></tr>
+        <tr><td>⚡ ELECTRICAL</td><td id="elecScore">0</td></tr>
+    </tbody>
+</table>
+
+
+        <h2>🏏 Register for a Game 🥊</h2>
+        <input type="text" id="studentName" placeholder="Enter your name">
+        
+        <select id="branchSelect">
+            <option disabled selected>Select your branch</option>
+            <option value="IT">IT</option>
+            <option value="ENTC">ENTC</option>
+            <option value="Civil">Civil</option>
+            <option value="Mechanical">Mechanical</option>
+            <option value="Electrical">Electrical</option>
+        </select>
+
+        <select id="gameSelect"></select>
+        <button id="registerBtn">Register</button>
+
+       <button id="backBtn" class="back-btn">🔙</button>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("backBtn").addEventListener("click", function (event) {
+                event.preventDefault();
+                document.body.classList.add("fade-out");
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 500);
+            });
+        });
+    </script>
+
+    <script src="js/student.js"></script>
+    
+    
+    
+    
+    
+    
+</body>
+</html>
+
