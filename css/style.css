@@ -376,3 +376,77 @@ td:nth-child(2) {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+select {
+    background: rgba(30, 30, 30, 0.7); /* Dark glassy effect */
+    color: #ffcc00; /* Soft yellow for visibility */
+    text-align: center;
+    padding: 12px;
+    border: 2px solid rgba(255, 204, 0, 0.5); /* Subtle golden border */
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none;
+    box-shadow: 0 4px 12px rgba(255, 204, 0, 0.2); /* Soft glow effect */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease-in-out;
+    appearance: none; /* Removes default browser styling */
+    cursor: pointer;
+}
+
+/* On Click (Focus) Effect */
+select:focus {
+    background: rgba(20, 20, 20, 0.9); /* Darker for depth */
+    border-color: rgba(255, 204, 0, 0.7); /* More prominent gold */
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+}
+
+/* Dropdown Options Styling */
+select option {
+    background: rgba(20, 20, 20, 0.95); /* Deep black */
+    color: #ffcc00; /* Golden text */
+    font-size: 14px;
+    padding: 8px;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Hover Effect for Options */
+select option:hover {
+    background: rgba(255, 204, 0, 0.3); /* Light golden highlight */
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
