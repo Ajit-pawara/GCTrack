@@ -7,22 +7,27 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         body {
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
+   background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+
             color: #fff;
             font-family: 'Poppins', sans-serif;
             text-align: center;
             transition: opacity 0.5s ease-in-out;
         }
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.08); /* Slightly fainter white for a better glassy effect */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15), 0 0 40px rgba(255, 255, 255, 0.1) inset; /* Outer glow + inner glow */
+    backdrop-filter: blur(12px); /* Slightly increased blur for a smoother glass effect */
+    -webkit-backdrop-filter: blur(12px);
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Stronger but subtle border for definition */
+    color: white; /* Ensuring text is clearly visible */
+    text-align: center; /* Makes content inside look well-aligned */
+}
 
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
 
         table {
             width: 100%;
@@ -51,27 +56,58 @@
             border-radius: 5px;
         }
 
-        input, select {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            text-align: center;
-        }
+ input, select {
+    background: rgba(255, 255, 255, 0.2);
+    color: #00ff99; /* Neon Green */
+    text-align: center;
+}
 
-        button {
-            background: #1e90ff;
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+button {
+    background: linear-gradient(135deg, #1e90ff, #0073e6); /* Smooth gradient */
+    color: #ffd700; /* Golden Yellow for premium look */
+    cursor: pointer;
+    padding: 12px 24px; /* Better spacing */
+    font-size: 16px; /* Readable text */
+    font-weight: bold;
+    border: none; /* Removes default border */
+    border-radius: 8px; /* Smooth rounded corners */
+    box-shadow: 0 4px 10px rgba(30, 144, 255, 0.4); /* Soft glow effect */
+    transition: all 0.3s ease-in-out;
+}
 
-        button:hover {
-            background: #0073e6;
-            transform: scale(1.05);
-        }
+/* Hover Effect */
+button:hover {
+    background: linear-gradient(135deg, #0073e6, #005bb5); /* Darker blue transition */
+    transform: scale(1.08); /* Slight lift effect */
+    box-shadow: 0 6px 15px rgba(30, 144, 255, 0.6); /* Increased glow */
+}
 
-        .fade-out {
-            opacity: 0;
-        }
+/* Click (Active) Effect */
+button:active {
+    transform: scale(0.98); /* Slight press-down effect */
+    box-shadow: 0 2px 8px rgba(30, 144, 255, 0.5);
+}
+
+/* Fade Out Effect */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     </style>
 </head>
 <body>
@@ -135,4 +171,3 @@
     
 </body>
 </html>
-
