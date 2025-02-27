@@ -24,6 +24,66 @@ window.addEventListener("storage", function (event) {
     }
 });
 
+
+
+// Function to populate the game selection dropdown
+function setupDefaultGames() {
+    const defaultGames = [
+        
+        "Volleyball", 
+        "Football", 
+        "Hockey", 
+        "Basketball", 
+        "Cricket", 
+       
+    ];
+
+    let adminGames = JSON.parse(localStorage.getItem("adminGames")) || [];
+
+    // Get the game select dropdown
+    const gameSelect = document.getElementById("gameSelect");
+
+
+    // Create "Choose a game" option first
+    const chooseGameOption = document.createElement("option");
+    chooseGameOption.value = "";
+    chooseGameOption.textContent = defaultGames[0];
+    chooseGameOption.disabled = true;
+    chooseGameOption.selected = true;
+    gameSelect.appendChild(chooseGameOption);
+
+    // If admin games exist, populate the dropdown with them
+    if (adminGames.length > 0) {
+        adminGames.forEach(game => {
+            const option = document.createElement("option");
+            option.value = game;
+            option.textContent = game;
+            gameSelect.appendChild(option);
+        });
+    } else {
+        // If no admin games, show default games
+        defaultGames.slice(1).forEach(game => {
+            const option = document.createElement("option");
+            option.value = game;
+            option.textContent = game;
+            gameSelect.appendChild(option);
+        });
+    }
+}
+
+// Call the function to setup the game selection when the page loads
+document.addEventListener("DOMContentLoaded", function () {
+    setupDefaultGames();
+});
+
+
+
+
+
+
+
+
+
 // ✅ Function to register a student
 document.getElementById("registerBtn").addEventListener("click", function () {
     let name = document.getElementById("studentName").value.trim();
@@ -55,6 +115,41 @@ document.getElementById("registerBtn").addEventListener("click", function () {
 
     setTimeout(() => msg.classList.add("fade-out"), 1500);
     setTimeout(() => msg.remove(), 2000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // ✅ Notify admin instantly
     localStorage.setItem("studentUpdate", Date.now());
@@ -135,4 +230,3 @@ document.getElementById('closeModalBtn').addEventListener('click', function() {
     document.getElementById('modal').style.display = 'none';
     document.body.classList.remove('modal-active'); // Enable background interaction
 });
-
