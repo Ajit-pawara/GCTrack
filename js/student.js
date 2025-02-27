@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // ✅ Load scores from localStorage
 function loadScores() {
     let storedScores = JSON.parse(localStorage.getItem("gcScores")) || {
-        IT: 0, ENTC: 0, Civil: 0, Mechanical: 0, Electrical: 0
+        IT: 106, ENTC: 159, Civil: 178, Mechanical: 126, Electrical: 82
     };
 
     document.getElementById("itScore").textContent = storedScores.IT;
