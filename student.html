@@ -204,7 +204,34 @@ button:active {
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-    
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector(".form");
+    const formButton = document.querySelector(".form-btn");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent page refresh
+
+      // Display a success message
+      alert("Message sent successfully!"); // Pop-up alert
+
+      // Reset form fields
+      form.reset();
+
+      // Disable the button again after sending
+      formButton.setAttribute("disabled", "true");
+    });
+
+    // Enable button when all fields are filled
+    const inputs = form.querySelectorAll("[data-form-input]");
+    inputs.forEach(input => {
+      input.addEventListener("input", function () {
+        formButton.disabled = !Array.from(inputs).every(i => i.value.trim() !== "");
+      });
+    });
+  });
+</script>
+
     
     
 </body>
