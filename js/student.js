@@ -108,13 +108,16 @@ document.getElementById("registerBtn").addEventListener("click", function () {
     localStorage.setItem("registeredStudents", JSON.stringify(students));
 
     // ✅ Show success message with animation
-    let msg = document.createElement("div");
-    msg.classList.add("success-message");
-    msg.textContent = `✅ ${name} registered for ${game}!`;
-    document.body.appendChild(msg);
+let msg = document.createElement("div");
+msg.classList.add("success-message");
+msg.textContent = `✅ ${name} registered for ${game}!`;
 
-    setTimeout(() => msg.classList.add("fade-out"), 1500);
-    setTimeout(() => msg.remove(), 2000);
+// Insert at the top of the body
+document.body.prepend(msg);
+
+// Fade out after 1.5 seconds, then remove
+setTimeout(() => msg.classList.add("fade-out"), 1500);
+setTimeout(() => msg.remove(), 2000);
 
 
 
