@@ -450,3 +450,154 @@ select option:hover {
 
 
 
+/* Reset some default styles for better consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;  /* Dark background */
+  color: #f4f4f4;  /* Light text */
+  padding: 20px;
+}
+
+/* General styling for the contact section */
+.contact {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.article-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;  /* White text */
+}
+
+.mapbox {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.mapbox iframe {
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  border: none;
+}
+
+/* Styling for the contact form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #333;  /* Dark background for form */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);  /* Dark shadow */
+}
+
+.form-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #fff;  /* White text for form title */
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+.form-input {
+  padding: 10px;
+  margin: 5px 0;
+  font-size: 1rem;
+  border: 1px solid #444;  /* Dark border */
+  border-radius: 4px;
+  width: 100%;
+  background-color: #222;  /* Dark input background */
+  color: #f4f4f4;  /* Light text in inputs */
+}
+
+.form-input::placeholder {
+  color: #aaa;  /* Light placeholder text */
+}
+
+.form-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: #007bff;  /* Blue button */
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: not-allowed;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 10px;
+}
+
+.form-btn:disabled {
+  background-color: #555;  /* Disabled button with dark gray */
+}
+
+@media (max-width: 768px) {
+  /* For mobile responsiveness */
+  .mapbox iframe {
+    width: 100%;
+    height: 250px;
+  }
+
+  .contact-form {
+    padding: 15px;
+  }
+
+  .form-title {
+    font-size: 1.5rem;
+  }
+
+  .input-wrapper {
+    width: 100%;
+  }
+
+  .form-btn {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* For very small screens like phones */
+  .article-title {
+    font-size: 1.5rem;
+  }
+
+  .form-title {
+    font-size: 1.2rem;
+  }
+
+  .form-input {
+    font-size: 0.9rem;
+  }
+
+  .form-btn {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+
+
+
+
+
