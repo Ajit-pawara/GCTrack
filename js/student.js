@@ -29,7 +29,7 @@ window.addEventListener("storage", function (event) {
 // Function to populate the game selection dropdown
 function setupDefaultGames() {
     const defaultGames = [
-        
+        "choose a game",
         "Volleyball", 
         "Football", 
         "Hockey", 
@@ -44,7 +44,7 @@ function setupDefaultGames() {
     const gameSelect = document.getElementById("gameSelect");
 
 
-    // Create "Choose a game" option first
+    // Create " " option first
     const chooseGameOption = document.createElement("option");
     chooseGameOption.value = "";
     chooseGameOption.textContent = defaultGames[0];
